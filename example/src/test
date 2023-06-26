@@ -1,0 +1,9 @@
+  const storedTheme = localStorage.getItem("theme");
+  const [dark, setDark] = useState(storedTheme === "dark");
+
+  useEffect(() => {
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  }, [dark]);
+  const handleDarkTheme = () => {
+    setDark((prevDark) => !prevDark);
+  };
